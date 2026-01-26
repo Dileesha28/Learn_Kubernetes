@@ -1,4 +1,4 @@
-## 4. Setting Up the Kubernetes Dashboard
+## Setting Up the Kubernetes Dashboard
 Deploy the Dashboard
 Apply the Kubernetes Dashboard manifest:
 ```bash
@@ -42,14 +42,14 @@ Retrieve the token for the admin-user:
 
 kubectl -n kubernetes-dashboard create token admin-user
 ```
-Copy the token for use in the Dashboard login.
+Copy the token to the clipboard to be used in the Dashboard login.
 
 Access the Dashboard
 Start the Dashboard using kubectl proxy:
 
 ```bash
 
-kubectl proxy
+kubectl proxy --port=8001 --address=0.0.0.0  --accept-hosts='.*'
 ```
 Open the Dashboard in your browser:
 
@@ -57,11 +57,5 @@ Open the Dashboard in your browser:
 
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
-Use the token from the previous step to log in.
+Use the copied token from the previous step to log in.
 
-## 5. Deleting the Cluster
-Delete the KIND cluster:
-```bash
-
-kind delete cluster --name my-kind-cluster
-```
