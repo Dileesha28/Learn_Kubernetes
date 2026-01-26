@@ -1,0 +1,11 @@
+kind: DevOpsBatch
+apiVersion: kubedev.com/v1
+
+metadata:
+  name: kubedev-batch
+
+spec:
+  name: LearnKubernetes
+  duration: 3 months 
+  platform: kubedev.com
+  mode: Live as always
